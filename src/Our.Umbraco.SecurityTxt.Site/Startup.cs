@@ -1,4 +1,4 @@
-namespace Our.Umbraco.SecurityTxt
+namespace Our.Umbraco.SecurityTxt.Site
 {
     public class Startup
     {
@@ -26,7 +26,7 @@ namespace Our.Umbraco.SecurityTxt
         /// <remarks>
         /// This method gets called by the runtime. Use this method to add services to the container.
         /// For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940.
-        /// </remarks>
+        /// </remarks> 
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddUmbraco(_env, _config)
