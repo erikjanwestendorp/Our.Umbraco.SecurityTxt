@@ -1,4 +1,4 @@
-namespace Our.Umbraco.SecurityTxt
+namespace Our.Umbraco.SecurityTxt.Site
 {
     public class Program
     {
