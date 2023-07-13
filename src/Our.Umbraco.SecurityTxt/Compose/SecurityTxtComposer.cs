@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using Our.Umbraco.SecurityTxt.Dashboards;
 using Our.Umbraco.SecurityTxt.Middleware;
+using Our.Umbraco.SecurityTxt.Sections;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Web.Common.ApplicationBuilder;
@@ -19,5 +21,8 @@ public class SecurityTxtComposer : IComposer
                 applicationBuilder => { }
             ));
         });
+
+        builder.AddSection<SecuritySection>();
+        builder.AddDashboard<WelcomeDashboard>();
     }
 }

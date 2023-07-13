@@ -4,6 +4,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+  <ItemGroup>
+    <Content Include="App_Plugins\SecurityTxt\Dashboards\welcomeDashboard.html" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="clean" Version="2.1.6" />
