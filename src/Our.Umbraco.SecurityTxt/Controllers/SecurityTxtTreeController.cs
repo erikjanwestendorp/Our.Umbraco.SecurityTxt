@@ -33,7 +33,7 @@ public class SecurityTxtTreeController : TreeController
 
         var root = rootResult.Value;
 
-        root.RoutePath = $"{SectionAlias}/{TreeAlias}/{"overview"}";
+        root.RoutePath = $"{SectionAlias}/{TreeAlias}/detail";
         root.Icon = "icon-files";
         root.HasChildren = false;
         root.MenuUrl = null;

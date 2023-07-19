@@ -1,0 +1,36 @@
+﻿<div>
+    <form name="contentForm" novalidate val-form-manager class="form-horizontal">
+        <umb-editor-view>
+            <umb-pane>
+                <umb-box>
+                    <umb-box-header title="Security.txt"></umb-box-header>
+                    <umb-box-content>
+                        <div class="umb-control-group control-group --label-on-top">
+                            <div class="umb-el-wrap">
+                                <div class="control-header">
+                                    <label class="control-label">Security.txt</label>
+                                    <small class="control-description full-width-description">security.txt is a standardized file placed on a website to provide information about its security policies and contact details for reporting vulnerabilities. For more info read <a class="btn-link -underline" href="https://securitytxt.org/">this page</a></small>
+                                </div>
+                                <div class="controls">
+                                    <textarea class="umb-property-editor" rows="10"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </umb-box-content>
+                </umb-box>
+            </umb-pane>
+            <umb-editor-footer>
+                <umb-editor-footer-content-right>
+                    <umb-button type="button"
+                                button-style="success"
+                                state="vm.page.saveButtonState"
+                                shortcut="ctrl+s"
+                                label="Save"
+                                label-key="buttons_save"
+                                action="vm.save()">
+                    </umb-button>
+                </umb-editor-footer-content-right>
+            </umb-editor-footer>
+        </umb-editor-view>
+    </form>
+</div>
