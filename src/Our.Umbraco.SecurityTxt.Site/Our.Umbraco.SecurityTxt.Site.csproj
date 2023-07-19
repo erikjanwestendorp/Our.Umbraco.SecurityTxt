@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="App_Plugins\SecurityTxt\backoffice\SecurityTxt\detail.html" />
     <Content Include="App_Plugins\SecurityTxt\Dashboards\welcomeDashboard.html" />
     <Content Include="App_Plugins\SecurityTxt\Lang\en.xml" />
   </ItemGroup>
