@@ -9,6 +9,9 @@
     <Content Include="App_Plugins\SecurityTxt\Dashboards\welcomeDashboard.html" />
     <Content Include="App_Plugins\SecurityTxt\Lang\en.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Plugins\SecurityTxt\backoffice\SecurityTxt\detail.controller.js" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="clean" Version="2.1.6" />

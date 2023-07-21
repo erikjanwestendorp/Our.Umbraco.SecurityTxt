@@ -17,6 +17,7 @@ public class SecurityTxtComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {
+        builder.ManifestFilters().Append<ManifestFilter>();
         builder.Services.Configure<UmbracoPipelineOptions>(options =>
         {
             options.AddFilter(new UmbracoPipelineFilter(
