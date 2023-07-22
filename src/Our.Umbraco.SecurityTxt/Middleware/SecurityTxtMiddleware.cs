@@ -1,14 +1,17 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Our.Umbraco.SecurityTxt.Services;
 
 namespace Our.Umbraco.SecurityTxt.Middleware;
 
 public class SecurityTxtMiddleware
 {
     private readonly RequestDelegate _next;
+    private readonly ISecurityTxtService _securityTxtService;
 
-    public SecurityTxtMiddleware(RequestDelegate next)
+    public SecurityTxtMiddleware(RequestDelegate next, ISecurityTxtService securityTxtService)
     {
         _next = next;
+        _securityTxtService = securityTxtService;
     }
 
     public async Task Invoke(HttpContext context)
@@ -19,7 +22,7 @@ public class SecurityTxtMiddleware
             return;
         }
 
-        var securityTxt = "todo";
+        var securityTxt = _securityTxtService.GetContent();
 
         if (string.IsNullOrWhiteSpace(securityTxt))
         {
