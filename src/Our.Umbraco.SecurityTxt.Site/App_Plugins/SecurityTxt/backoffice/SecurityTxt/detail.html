@@ -1,6 +1,6 @@
-﻿<div ng-controller="Security.SecurityTxt.DetailController">
+﻿<div ng-controller="Security.SecurityTxt.DetailController as vm">
     <form name="contentForm" novalidate val-form-manager class="form-horizontal">
-        <umb-editor-view>
+        <umb-editor-view ng-if="!vm.loading">
             <umb-pane>
                 <umb-box>
                     <umb-box-header title="Security.txt"></umb-box-header>
@@ -12,7 +12,7 @@
                                     <small class="control-description full-width-description">security.txt is a standardized file placed on a website to provide information about its security policies and contact details for reporting vulnerabilities. For more info read <a class="btn-link -underline" href="https://securitytxt.org/">this page</a></small>
                                 </div>
                                 <div class="controls">
-                                    <textarea class="umb-property-editor" rows="10"></textarea>
+                                    <textarea class="umb-property-editor" ng-model="vm.model" rows="10"></textarea>
                                 </div>
                             </div>
                         </div>

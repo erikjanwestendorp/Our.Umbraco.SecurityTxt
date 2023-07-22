@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Our.Umbraco.SecurityTxt.Models;
 using Our.Umbraco.SecurityTxt.Services;
 using Umbraco.Cms.Web.BackOffice.Controllers;
 using Umbraco.Cms.Web.Common.Attributes;
@@ -14,8 +15,16 @@ public class SecurityTxtController : UmbracoAuthorizedApiController
         _securityTxtService = securityTxtService;
     }
 
+    [HttpGet]
     public IActionResult Get()
     {
         return new JsonResult(_securityTxtService.GetContent());
+    }
+
+    [HttpPost]
+    public IActionResult Save(SecurityTxtModel model)
+    {
+        _securityTxtService.SetContent(model.Content);
+        return Get();
     }
 }
