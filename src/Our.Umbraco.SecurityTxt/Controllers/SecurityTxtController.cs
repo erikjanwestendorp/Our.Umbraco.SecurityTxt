@@ -14,6 +14,7 @@ public class SecurityTxtController : UmbracoAuthorizedApiController
         _securityTxtService = securityTxtService;
     }
 
+    [HttpGet]
     public IActionResult Get()
     {
         return new JsonResult(_securityTxtService.GetContent());
