@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Our.Umbraco.SecurityTxt.Sections;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Services;
@@ -10,7 +9,7 @@ using Umbraco.Cms.Web.Common.Attributes;
 
 namespace Our.Umbraco.SecurityTxt.Controllers;
 
-[Tree(SecuritySection.SectionAlias, Alias, TreeTitle = "Security.txt", TreeGroup = "SecurityTxt", SortOrder = 1)]
+[Tree(Constants.Applications.Settings, Alias, TreeTitle = "Security.txt", TreeGroup = "SecurityTxt", SortOrder = 1)]
 [PluginController("SecurityTxt")]
 public class SecurityTxtTreeController : TreeController
 {
@@ -28,7 +27,7 @@ public class SecurityTxtTreeController : TreeController
         var rootResult = base.CreateRootNode(queryStrings);
         if (rootResult.Result is not null)
         {
-            return rootResult;
+            return rootResult; 
         }
 
         var root = rootResult.Value;
