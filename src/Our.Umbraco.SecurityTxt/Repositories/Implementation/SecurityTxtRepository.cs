@@ -8,14 +8,14 @@ namespace Our.Umbraco.SecurityTxt.Repositories.Implementation;
 
 internal class SecurityTxtRepository : ISecurityTxtRepository
 {
-    private IScopeProvider _scopeProvider;
+    private readonly IScopeProvider _scopeProvider;
 
     public SecurityTxtRepository(IScopeProvider scopeProvider)
     {
         _scopeProvider = scopeProvider;
     }
 
-    public SecurityTxtModel Get(int id)
+    public SecurityTxtModel? Get(int id)
     {
         using var scope = _scopeProvider.CreateScope(autoComplete: true);
         var entity = scope.Database.FirstOrDefault<SecurityTxtEntity>(scope.SqlContext.Sql()
@@ -25,12 +25,12 @@ internal class SecurityTxtRepository : ISecurityTxtRepository
         return entity is null ? null : MapToModel(entity);
     }
 
-    public SecurityTxtModel Add(SecurityTxtModel model)
+    public SecurityTxtModel? Add(SecurityTxtModel model)
     {
         return Update(model);
     }
 
-    public SecurityTxtModel Update(SecurityTxtModel model)
+    public SecurityTxtModel? Update(SecurityTxtModel model)
     {
         using (var scope = _scopeProvider.CreateScope(autoComplete: true))
         {

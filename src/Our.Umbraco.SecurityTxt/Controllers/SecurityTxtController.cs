@@ -24,7 +24,10 @@ public class SecurityTxtController : UmbracoAuthorizedApiController
     [HttpPost]
     public IActionResult Save(SecurityTxtModel model)
     {
-        _securityTxtService.SetContent(model.Content);
+        if (!string.IsNullOrWhiteSpace(model.Content))
+        {
+            _securityTxtService.SetContent(model.Content);
+        }
         return Get();
     }
 }
