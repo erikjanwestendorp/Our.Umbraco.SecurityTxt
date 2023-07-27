@@ -2,5 +2,5 @@
 
 public class SecurityTxtPostModel
 {
-    public string Content { get; set; }
+    public string? Content { get; set; }
 }
