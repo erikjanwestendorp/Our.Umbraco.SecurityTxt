@@ -7,7 +7,7 @@ using Umbraco.Cms.Web.Common.Attributes;
 
 namespace Our.Umbraco.SecurityTxt.Controllers;
 
-[Tree(SecuritySection.SectionAlias, Alias, TreeTitle = "Security.txt", TreeGroup = "SecurityTxt", SortOrder = 1)]
+[Tree(SecuritySection.SectionAlias, Alias, TreeTitle = Title, TreeGroup = Group, SortOrder = 1)]
 [PluginController("SecurityTxt")]
 public class SecurityTxtSectionTreeController : SecurityTxtTreeController
 {
