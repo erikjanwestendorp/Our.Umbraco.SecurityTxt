@@ -8,7 +8,7 @@ internal class ManifestFilter : IManifestFilter
     {
         manifests.Add(new PackageManifest
         {
-            PackageName = "Our.Umbraco.SecurityTxt",
+            PackageName = SecurityTxtConstants.Package.Name,
             Version = "1.0.0",
             Scripts = new []
             {

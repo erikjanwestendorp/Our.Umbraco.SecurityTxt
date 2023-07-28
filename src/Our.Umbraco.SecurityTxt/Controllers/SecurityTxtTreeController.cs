@@ -9,11 +9,13 @@ using Umbraco.Cms.Web.Common.Attributes;
 
 namespace Our.Umbraco.SecurityTxt.Controllers;
 
-[Tree(Constants.Applications.Settings, Alias, TreeTitle = "Security.txt", TreeGroup = "SecurityTxt", SortOrder = 1)]
+[Tree(Constants.Applications.Settings, Alias, TreeTitle = Title, TreeGroup = Group, SortOrder = 1)]
 [PluginController("SecurityTxt")]
 public class SecurityTxtTreeController : TreeController
 {
-    public const string Alias = "SecurityTxt";
+    public const string Alias = SecurityTxtConstants.Trees.SecurityTxt.Alias;
+    public const string Group = SecurityTxtConstants.Trees.SecurityTxt.Group;
+    public const string Title = SecurityTxtConstants.Trees.SecurityTxt.Title;
 
     public SecurityTxtTreeController(
         ILocalizedTextService localizedTextService,
