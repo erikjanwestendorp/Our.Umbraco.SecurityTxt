@@ -2,6 +2,11 @@
 
 internal class SecurityTxtConstants
 {
+    public static class Settings
+    {
+        public const string DefaultPath = "/.well-known/security.txt";
+    }
+
     public static class Package
     {
         public const string Name = "Our.Umbraco.SecurityTxt";
