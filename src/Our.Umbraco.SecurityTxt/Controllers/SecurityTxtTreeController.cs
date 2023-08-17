@@ -64,20 +64,23 @@ public class SecurityTxtTreeController : TreeController
         {
             return nodes;
         }
-        
-        if (id == Constants.System.Root.ToInvariantString())
+
+        if (id != Constants.System.Root.ToInvariantString())
         {
-            var domains = _domainService.GetAll(true);
+            return nodes;
+        }
 
-            if (domains.TryGetListIfAny(out var domainList))
-            {
+        var domains = _domainService.GetAll(true);
 
-                foreach (var thing in domainList)
-                {
-                    var node = CreateTreeNode(thing.Id.ToString(), "-1", queryStrings, thing.DomainName, "icon-files", false);
-                    nodes.Add(node);
-                }
-            }
+        if (!domains.TryGetListIfAny(out var domainList))
+        {
+            return nodes;
+        }
+
+        foreach (var domain in domainList)
+        {
+            var node = CreateTreeNode(domain.Id.ToString(), "-1", queryStrings, domain.DomainName, "icon-files", false);
+            nodes.Add(node);
         }
 
         return nodes;
