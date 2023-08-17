@@ -1,4 +1,5 @@
-﻿using Our.Umbraco.SecurityTxt.Sections;
+﻿using Microsoft.Extensions.Options;
+using Our.Umbraco.SecurityTxt.Sections;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Services;
@@ -11,7 +12,7 @@ namespace Our.Umbraco.SecurityTxt.Controllers;
 [PluginController("SecurityTxt")]
 public class SecurityTxtSectionTreeController : SecurityTxtTreeController
 {
-    public SecurityTxtSectionTreeController(ILocalizedTextService localizedTextService, UmbracoApiControllerTypeCollection umbracoApiControllerTypeCollection, IEventAggregator eventAggregator) : base(localizedTextService, umbracoApiControllerTypeCollection, eventAggregator)
+    public SecurityTxtSectionTreeController(ILocalizedTextService localizedTextService, UmbracoApiControllerTypeCollection umbracoApiControllerTypeCollection, IEventAggregator eventAggregator, IOptions<Configuration.SecurityTxtSettings> settings, IDomainService domainService) : base(localizedTextService, umbracoApiControllerTypeCollection, eventAggregator, settings, domainService)
     {
     }
 }
